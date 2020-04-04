@@ -1,6 +1,6 @@
 package di.spring.sfgdi.Controllers;
 
-import di.spring.sfgdi.services.GreetingService;
+import di.spring.sfgdi.services.GreetingServiceImpl;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Controller;
 public class ConstructorInjController {
 
     // use final. once injected can't be modifies.
-    private final GreetingService greetingService;
+    private final GreetingServiceImpl greetingServiceImpl;
 
     // do not need to @Autowire as of Spring 5
-    public ConstructorInjController(GreetingService greetingService) {
-        this.greetingService = greetingService;
+    public ConstructorInjController(GreetingServiceImpl greetingServiceImpl) {
+        this.greetingServiceImpl = greetingServiceImpl;
     }
 
     public String getGreeting(){
-        return greetingService.sayGreeting();
+        return greetingServiceImpl.sayGreeting();
     }
 }
