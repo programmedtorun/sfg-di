@@ -1,6 +1,9 @@
 package di.spring.sfgdi;
 
+import di.spring.sfgdi.Controllers.ConstructorInjController;
 import di.spring.sfgdi.Controllers.MyController;
+import di.spring.sfgdi.Controllers.PropertyInjController;
+import di.spring.sfgdi.Controllers.SetterInjController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -23,6 +26,18 @@ public class SfgDiApplication {
 
         // printing out greeting rval
         System.out.println(greeting);
+
+        System.out.println("-------------Property");
+        PropertyInjController propertyInjController = (PropertyInjController) ctx.getBean("propertyInjController");
+        System.out.println(propertyInjController.getGreeting());
+
+        System.out.println("-------------Setter");
+        SetterInjController setterInjController = (SetterInjController) ctx.getBean("setterInjController");
+        System.out.println(setterInjController.getGreeting());
+
+        System.out.println("---------Constructor");
+        ConstructorInjController constructorInjController = (ConstructorInjController) ctx.getBean("constructorInjController");
+        System.out.println(constructorInjController.getGreeting());
     }
 
 }
