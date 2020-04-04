@@ -15,7 +15,7 @@ public class SfgDiApplication {
         // not creating a controller but asking context for an instance of this bean
         // asking context for controller. did not ever say "new Controller"
         // spring framework managing construction of controller. simply asking spring for
-        // the object. 
+        // the object.
         MyController myController = (MyController) ctx.getBean("myController");
 
         // getting return value in greeting.
