@@ -7,7 +7,7 @@ import di.spring.sfgdi.services.GreetingService;
  */
 public class ConstructorInjController {
 
-    // use final once injected can't be modifies. 
+    // use final. once injected can't be modifies.
     private final GreetingService greetingService;
 
     public ConstructorInjController(GreetingService greetingService) {
