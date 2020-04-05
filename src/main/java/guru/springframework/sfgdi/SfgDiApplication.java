@@ -8,7 +8,10 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class SfgDiApplication {
 
+	// Profiles allow you to control/change spring app in different runtime envs.
+
 	public static void main(String[] args) {
+		// getting a handle on application context via ctx var.
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
 		PetController petController = (PetController) ctx.getBean("petController");
