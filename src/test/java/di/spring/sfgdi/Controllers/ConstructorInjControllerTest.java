@@ -1,10 +1,8 @@
 package di.spring.sfgdi.Controllers;
 
-import di.spring.sfgdi.services.GreetingServiceImpl;
+import di.spring.sfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by patrickskelley on Apr, 2020
@@ -17,7 +15,7 @@ class ConstructorInjControllerTest {
     // acting as inversion controll in the setup methods of j-unit.
     @BeforeEach
     void setUp() {
-        constructorInjController = new ConstructorInjController(new GreetingServiceImpl()); // new consinjcont and
+        constructorInjController = new ConstructorInjController(new ConstructorGreetingService()); // new consinjcont and
         // creating a new greeting svc
     }
 

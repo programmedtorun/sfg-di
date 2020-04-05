@@ -1,10 +1,8 @@
 package di.spring.sfgdi.Controllers;
 
-import di.spring.sfgdi.services.GreetingServiceImpl;
+import di.spring.sfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by patrickskelley on Apr, 2020
@@ -19,7 +17,7 @@ class PropertyInjControllerTest {
     @BeforeEach
     void setUp(){
         controller = new PropertyInjController();
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test

@@ -1,6 +1,7 @@
 package di.spring.sfgdi.Controllers;
 
-import di.spring.sfgdi.services.GreetingServiceImpl;
+import di.spring.sfgdi.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -10,14 +11,17 @@ import org.springframework.stereotype.Controller;
 public class ConstructorInjController {
 
     // use final. once injected can't be modifies.
-    private final GreetingServiceImpl greetingServiceImpl;
+    private final GreetingService greetingService;
 
     // do not need to @Autowire as of Spring 5
-    public ConstructorInjController(GreetingServiceImpl greetingServiceImpl) {
-        this.greetingServiceImpl = greetingServiceImpl;
+
+    // @Qualifier: bean name is class name with leading lowercase, defines which
+    // class implmentation of greeting service to use
+    public ConstructorInjController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     public String getGreeting(){
-        return greetingServiceImpl.sayGreeting();
+        return greetingService.sayGreeting();
     }
 }

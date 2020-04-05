@@ -1,10 +1,8 @@
 package di.spring.sfgdi.Controllers;
 
-import di.spring.sfgdi.services.GreetingServiceImpl;
+import di.spring.sfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by patrickskelley on Apr, 2020
@@ -16,7 +14,7 @@ class SetterInjControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjController();
-        controller.setGreetingService(new GreetingServiceImpl()); // using setter to inj greeting sevc implementation
+        controller.setGreetingService(new ConstructorGreetingService()); // using setter to inj greeting sevc implementation
 
     }
 
