@@ -1,5 +1,6 @@
 package di.spring.sfgdi.Controllers;
 
+import di.spring.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -10,8 +11,14 @@ import org.springframework.stereotype.Controller;
 // put it into the context.
 @Controller
 public class MyController {
+
+    private final GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String sayHello(){
-        System.out.println("Hello World!");
-        return "Hi Folks!";
+        return greetingService.sayGreeting();
     }
 }
