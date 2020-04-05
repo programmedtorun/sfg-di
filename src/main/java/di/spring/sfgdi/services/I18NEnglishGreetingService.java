@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by patrickskelley on Apr, 2020
  */
-@Profile("EN") // designates profile and class to be loaded into context via application properties file
+@Profile({"EN", "default"}) // designates profile and class to be loaded into context via application properties file
 @Service("i18NService")
 public class I18NEnglishGreetingService implements GreetingService {
 
