@@ -11,9 +11,15 @@ import org.springframework.context.annotation.Profile;
 /**
  * Created by patrickskelley on Apr, 2020
  */
+
+
+
 @Configuration
 public class GreetingServiceConfig {
 
+    // default scope for beans in spring is singleton
+    // note: you can create custom bean scopes in spring. ie. prototype scope: spring will create a new
+    // instance of the bean for every obj requesting it
     @Bean
     GreetingServiceFactory greetingServiceFactory(GreetingRepository repository){
         return new GreetingServiceFactory(repository);

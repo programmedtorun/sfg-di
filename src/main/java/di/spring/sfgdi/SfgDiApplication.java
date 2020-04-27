@@ -10,6 +10,9 @@ public class SfgDiApplication {
 
     // Profiles allow you to control/change spring app in different runtime envs.
 
+
+    // note to disable specific spring boot auto-config classes pass class name to the
+    // excluede parameter of the @EnableAutoConfiguration annotation
 	public static void main(String[] args) {
         // getting a handle on application context via ctx var.
         ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
