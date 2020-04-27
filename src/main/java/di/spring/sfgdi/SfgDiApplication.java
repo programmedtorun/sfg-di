@@ -14,8 +14,8 @@ public class SfgDiApplication {
         // getting a handle on application context via ctx var.
         ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-        I18NController i18NController = (I18NController) ctx.getBean("i18NController");
-        System.out.println(i18NController.sayHello());
+//        I18NController i18NController = (I18NController) ctx.getBean("i18NController");
+//        System.out.println(i18NController.sayHello());
 
         // not creating a controller but asking context for an instance of this bean
         // asking context for controller. did not ever say "new Controller"
